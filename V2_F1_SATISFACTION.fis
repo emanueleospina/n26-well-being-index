@@ -1,0 +1,69 @@
+[System]
+Name='V2_F1_SATISFACTION'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=25
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='NetIncome'
+Range=[0 1]
+NumMFs=5
+MF1='Low__NetIncome':'gaussmf',[0.08845 0]
+MF2='Mid__NetIncome':'gaussmf',[0.08845 0.5]
+MF3='High__NetIncome':'gaussmf',[0.08845 1]
+MF4='LowMid__NetIncome':'gaussmf',[0.08845 0.25]
+MF5='HighMid__NetIncome':'gaussmf',[0.08845 0.75]
+
+[Input2]
+Name='FinancialSatisfaction'
+Range=[0 1]
+NumMFs=5
+MF1='Low__FinancialSatisfaction':'gaussmf',[0.08845 -1.388e-17]
+MF2='Mid__FinancialSatisfaction':'gaussmf',[0.08845 0.5]
+MF3='High__FinancialSatisfaction':'gaussmf',[0.08845 1]
+MF4='LowMid__FinancialSatisfaction':'gaussmf',[0.08845 0.25]
+MF5='HighMid__FinancialSatisfaction':'gaussmf',[0.08845 0.75]
+
+[Output1]
+Name='Satisfaction'
+Range=[0 1]
+NumMFs=5
+MF1='Low__Satisfaction':'gaussmf',[0.08845 -1.388e-17]
+MF2='Mid__Satisfaction':'gaussmf',[0.08845 0.5]
+MF3='High__Satisfaction':'gaussmf',[0.08845 1]
+MF4='LowMid__Satisfaction':'gaussmf',[0.08845 0.25]
+MF5='HighMid__Satisfaction':'gaussmf',[0.08845 0.75]
+
+[Rules]
+1 1, 1 (1) : 1
+1 4, 1 (1) : 1
+1 2, 4 (1) : 1
+1 5, 4 (1) : 1
+1 3, 2 (1) : 1
+4 1, 1 (1) : 1
+4 4, 4 (1) : 1
+4 2, 4 (1) : 1
+4 5, 2 (1) : 1
+4 3, 2 (1) : 1
+2 1, 4 (1) : 1
+2 4, 4 (1) : 1
+2 2, 2 (1) : 1
+2 5, 2 (1) : 1
+2 3, 5 (1) : 1
+5 1, 4 (1) : 1
+5 4, 2 (1) : 1
+5 2, 2 (1) : 1
+5 5, 5 (1) : 1
+5 3, 5 (1) : 1
+3 1, 2 (1) : 1
+3 4, 2 (1) : 1
+3 2, 5 (1) : 1
+3 5, 5 (1) : 1
+3 3, 5 (1) : 1

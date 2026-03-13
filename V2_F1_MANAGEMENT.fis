@@ -1,0 +1,69 @@
+[System]
+Name='V2_F1_MANAGEMENT'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=25
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='PersonalFinancialManagement'
+Range=[0 1]
+NumMFs=5
+MF1='Low__PersonalFinancialManagement':'gaussmf',[0.08845 0]
+MF2='Mid__PersonalFinancialManagement':'gaussmf',[0.08845 0.5]
+MF3='High__PersonalFinancialManagement':'gaussmf',[0.08845 1]
+MF4='LowMid__PersonalFinancialManagement':'gaussmf',[0.08845 0.25]
+MF5='HighMid__PersonalFinancialManagement':'gaussmf',[0.08845 0.75]
+
+[Input2]
+Name='SecurityNet'
+Range=[0 1]
+NumMFs=5
+MF1='Low__SecurityNet':'gaussmf',[0.08845 -1.388e-17]
+MF2='Mid__SecurityNet':'gaussmf',[0.08845 0.5]
+MF3='High__SecurityNet':'gaussmf',[0.08845 1]
+MF4='LowMid__SecurityNet':'gaussmf',[0.08845 0.25]
+MF5='HighMid__SecurityNet':'gaussmf',[0.08845 0.75]
+
+[Output1]
+Name='Management'
+Range=[0 1]
+NumMFs=5
+MF1='Low__Management':'gaussmf',[0.08845 -1.388e-17]
+MF2='Mid__Management':'gaussmf',[0.08845 0.5]
+MF3='High__Management':'gaussmf',[0.08845 1]
+MF4='LowMid__Management':'gaussmf',[0.08845 0.25]
+MF5='HighMid__Management':'gaussmf',[0.08845 0.75]
+
+[Rules]
+1 1, 1 (1) : 1
+1 4, 4 (1) : 1
+1 2, 4 (1) : 1
+1 5, 4 (1) : 1
+1 3, 4 (1) : 1
+4 1, 4 (1) : 1
+4 4, 4 (1) : 1
+4 2, 2 (1) : 1
+4 5, 2 (1) : 1
+4 3, 2 (1) : 1
+2 1, 4 (1) : 1
+2 4, 2 (1) : 1
+2 2, 2 (1) : 1
+2 5, 2 (1) : 1
+2 3, 5 (1) : 1
+5 1, 4 (1) : 1
+5 4, 2 (1) : 1
+5 2, 2 (1) : 1
+5 5, 5 (1) : 1
+5 3, 5 (1) : 1
+3 1, 4 (1) : 1
+3 4, 2 (1) : 1
+3 2, 5 (1) : 1
+3 5, 5 (1) : 1
+3 3, 3 (1) : 1
